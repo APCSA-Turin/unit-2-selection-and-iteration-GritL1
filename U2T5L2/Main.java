@@ -6,8 +6,41 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Enter a number that is either positive, even, and a multiple of 7 OR prime:");
     int userNumber = scanner.nextInt();
+    int counter = 0;
+    if (isPrime(userNumber)){
+      System.out.println("Well done, " + userNumber + " is Prime!");
+    } else {
+      }
+      while( !(isPrime(userNumber))){
+        counter = 0;
+        if (userNumber < 0){
+        System.out.println("Not positive");
+        counter++;
+        }
+        if (userNumber % 2 != 0){
+        System.out.println("Not even");
+        counter++;
+        }if (userNumber % 7 != 0){
+        System.out.println("Not a multiple of 7");
+        counter++;
+        }
+        if (counter == 0){
+          System.out.println("Well done, " + userNumber + " is a positive, even, multiple of 7");
+          break;
+        }
+      
+        System.out.print("Try again: ");
+        userNumber = scanner.nextInt();
+        if (isPrime(userNumber)){
+          System.out.println("Well done, " + userNumber + " is Prime!");
+          break;
+        } 
+      }
 
-  }
+      
+    }
+    
+  
 
   /* Returns true if number is prime and false
         if it is not prime; if number is 1, return false */
@@ -25,10 +58,10 @@ public class Main {
       currentDivisor++;
     }
     return true;
-  }
+  }}
 
 
 
   
-}
+
 
